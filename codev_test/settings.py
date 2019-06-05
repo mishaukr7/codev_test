@@ -141,7 +141,7 @@ REST_FRAMEWORK = {
     ),
     'PAGE_SIZE': 10,
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'DATE_INPUT_FORMATS': ('%m/%Y',),
+    'DATE_INPUT_FORMATS': ('%d-%m-%Y',),
     'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.URLPathVersioning',
 }
 
