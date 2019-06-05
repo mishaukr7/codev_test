@@ -23,12 +23,16 @@ class Seller(models.Model):
         verbose_name = _('Seller')
         verbose_name_plural = _('Sellers')
 
+    def __str__(self):
+        return self.name
+
 
 class Product(TimeStampedModel):
     seller = models.ForeignKey(
         Seller,
         on_delete=models.CASCADE,
-        related_name='products'
+        related_name='products',
+        verbose_name=_('Seller')
     )
     name = models.CharField(
         max_length=255,
@@ -44,3 +48,5 @@ class Product(TimeStampedModel):
         verbose_name = _('Product')
         verbose_name_plural = _('Products')
 
+    def __str__(self):
+        return '{} - {}'.format(self.seller, self.name)
